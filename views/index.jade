@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
+  script.
+    function savetoMongodb(){
+      $.ajax({
+        "url": "/service",
+        "method": "POST"
+      }); 
+      
+    }
+  //- h1= title
+  div.container-fluid.p-5.text-black
+    h2.text-center.mt-4 Wellcome to Node.js-Express Application!
+    div.container.mt-4.p-5(style="background: linear-gradient(90deg, rgb(251, 233, 204) 33%, rgb(252, 245, 234) 73%); margin-bottom: -10px;margin-bottom:50px;")
+      p I tired to get my hands dirty to work with node.js (express framework), router, get and post methods.
+      p By clicking on the "save to MongoDB" button, the content of <a href="/glossary" target="_blank" >Glossary</a> page will be read and some desired data such as terms and their definition of web development glossaries will be extracted and saved in local mongodb.
+      img(src="/images/localmongo.png" style="width:80%")
+      div.text-center.mt-4
+        button.btn.p-2.text-white(style="background-color: #842f5e;" type="submit" onclick='savetoMongodb()') Save terms and defenitions to local MongoDB
+    
+    
